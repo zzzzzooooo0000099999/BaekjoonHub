@@ -2,10 +2,10 @@
 
 int main(void) {
 
-  int q, w;
-  scanf("%d %d", &q, &w);
+  long int q, w;
+  scanf("%ld %ld", &q, &w);
 
-  printf("%d", (q+w)*(q-w));
+  printf("%ld", (q+w)*(q-w));
   
   return 0;
 }
