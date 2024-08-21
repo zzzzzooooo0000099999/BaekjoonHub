@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include <math.h>
 
 int main(void) {
 
@@ -9,12 +8,17 @@ int main(void) {
   char b[a];
   scanf("%s", b);
 
-  int sum=0;
+  long long sum=0;
+  
   for (int i=0; i<a; i++){
-    sum += (b[i] - 'a' + 1) * (pow(31, i));
+    long long p = 1;
+    for (int j=0; j<i; j++){
+      p = p * 31 % 1234567891;
+    }
+    sum = (sum + (b[i] - 'a' + 1) * p) % 1234567891;
   }
 
-  printf("%d", sum);
+  printf("%lld", sum);
   
   return 0;
 }
